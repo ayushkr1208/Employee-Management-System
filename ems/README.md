@@ -1,6 +1,6 @@
 # Employee Management System
 
-A modern, full-stack Employee Management System (EMS) built with React. This application allows an admin to manage employees and their tasks, while employees can view and update their assigned tasks. The UI is clean, modern, and responsive, with separate login windows for admin and employees.
+A modern, frontend-only Employee Management System (EMS) built with **React** and **Tailwind CSS**. This application allows an admin to manage employees and their tasks, while employees can view and update their assigned tasks. All data is stored in the browser using `localStorage.jsx`—no backend or server is required. The UI is clean, modern, and responsive, with separate login windows for admin and employees.
 
 ## Features
 
@@ -10,15 +10,14 @@ A modern, full-stack Employee Management System (EMS) built with React. This app
   - Admin can assign tasks to employees.
   - Employees can accept, complete, or fail tasks.
   - Real-time dashboard updates for task counts (new, active, completed, failed).
-- **Persistent Data**: Uses browser localStorage to persist users and tasks.
+- **Persistent Data**: Uses browser localStorage (via `localStorage.jsx`) to persist users and tasks.
 - **Live Updates**: Dashboards update instantly when tasks are assigned or updated.
 - **Responsive Design**: Works well on desktop and tablets.
+- **No Backend Required**: 100% frontend, easy to deploy and run anywhere.
 
 ## Getting Started
 
-### Prerequisites
-- Node.js (v16 or higher recommended)
-- npm or yarn
+
 
 ### Installation
 1. Clone the repository:
@@ -62,7 +61,7 @@ ems/
 │   │   ├── TaskList/     # Task-related components
 │   │   └── other/        # Shared UI components
 │   ├── context/          # AuthProvider for global state
-│   ├── utils/            # LocalStorage helpers and seed data
+│   ├── utils/            # localStorage.jsx for all data storage
 │   └── App.jsx           # Main app logic
 ├── public/
 ├── package.json
