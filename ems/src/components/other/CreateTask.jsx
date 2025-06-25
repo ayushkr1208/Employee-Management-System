@@ -42,61 +42,46 @@ const CreateTask = () => {
     }
 
     return (
-        <div className='p-5 bg-[#1c1c1c] mt-5 rounded'>
-            <form onSubmit={(e) => {
-                submitHandler(e)
-            }}
-                className='flex flex-wrap w-full items-start justify-between'
-            >
-                <div className='w-1/2'>
-                    <div>
-                        <h3 className='text-sm text-gray-300 mb-0.5'>Task Title</h3>
+        <div className='bg-[#1c1c1c] rounded-2xl shadow-lg p-8'>
+            <form onSubmit={submitHandler} className='flex flex-wrap w-full items-start justify-between gap-8'>
+                <div className='w-full md:w-1/2'>
+                    <div className='mb-4'>
+                        <h3 className='text-sm text-gray-300 mb-1'>Task Title</h3>
                         <input
                             value={taskTitle}
-                            onChange={(e) => {
-                                setTaskTitle(e.target.value)
-                            }}
-                            className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder='Make a UI design'
+                            onChange={(e) => setTaskTitle(e.target.value)}
+                            className='text-base py-2 px-4 w-full rounded-lg outline-none bg-[#162e2e] border-2 border-gray-600 focus:border-orange-500 text-white mb-2 transition' type="text" placeholder='Make a UI design'
                         />
                     </div>
-                    <div>
-                        <h3 className='text-sm text-gray-300 mb-0.5'>Date</h3>
+                    <div className='mb-4'>
+                        <h3 className='text-sm text-gray-300 mb-1'>Date</h3>
                         <input
                             value={taskDate}
-                            onChange={(e) => {
-                                setTaskDate(e.target.value)
-                            }}
-                            className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="date" />
+                            onChange={(e) => setTaskDate(e.target.value)}
+                            className='text-base py-2 px-4 w-full rounded-lg outline-none bg-[#162e2e] border-2 border-gray-600 focus:border-orange-500 text-white mb-2 transition' type="date" />
                     </div>
-                    <div>
-                        <h3 className='text-sm text-gray-300 mb-0.5'>Asign to</h3>
+                    <div className='mb-4'>
+                        <h3 className='text-sm text-gray-300 mb-1'>Assign to</h3>
                         <input
                             value={asignTo}
-                            onChange={(e) => {
-                                setAsignTo(e.target.value)
-                            }}
-                            className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder='employee name' />
+                            onChange={(e) => setAsignTo(e.target.value)}
+                            className='text-base py-2 px-4 w-full rounded-lg outline-none bg-[#162e2e] border-2 border-gray-600 focus:border-orange-500 text-white mb-2 transition' type="text" placeholder='employee name' />
                     </div>
-                    <div>
-                        <h3 className='text-sm text-gray-300 mb-0.5'>Category</h3>
+                    <div className='mb-4'>
+                        <h3 className='text-sm text-gray-300 mb-1'>Category</h3>
                         <input
                             value={category}
-                            onChange={(e) => {
-                                setCategory(e.target.value)
-                            }}
-                            className='text-sm py-1 px-2 w-4/5 rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' type="text" placeholder='design, dev, etc' />
+                            onChange={(e) => setCategory(e.target.value)}
+                            className='text-base py-2 px-4 w-full rounded-lg outline-none bg-[#162e2e] border-2 border-gray-600 focus:border-orange-500 text-white mb-2 transition' type="text" placeholder='design, dev, etc' />
                     </div>
                 </div>
-
-                <div className='w-2/5 flex flex-col items-start'>
-                    <h3 className='text-sm text-gray-300 mb-0.5'>Description</h3>
+                <div className='w-full md:w-2/5 flex flex-col items-start'>
+                    <h3 className='text-sm text-gray-300 mb-1'>Description</h3>
                     <textarea value={taskDescription}
-                        onChange={(e) => {
-                            setTaskDescription(e.target.value)
-                        }} className='w-full h-44 text-sm py-2 px-4 rounded outline-none bg-transparent border-[1px] border-gray-400' name="" id=""></textarea>
-                    <button className='bg-emerald-500 py-3 hover:bg-emerald-600 px-5 rounded text-sm mt-4 w-full'>Create Task</button>
+                        onChange={(e) => setTaskDescription(e.target.value)}
+                        className='w-full h-44 text-base py-2 px-4 rounded-lg outline-none bg-[#162e2e] border-2 border-gray-600 focus:border-orange-500 text-white mb-2 transition' />
+                    <button className='bg-gradient-to-r from-orange-500 to-emerald-600 py-3 hover:opacity-90 px-5 rounded-lg text-base mt-4 w-full text-white font-semibold shadow-lg transition'>Create Task</button>
                 </div>
-
             </form>
         </div>
     )

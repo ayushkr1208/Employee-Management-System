@@ -5,29 +5,32 @@ const AllTask = () => {
 
    const [userData,setUserData] =  useContext(AuthContext)
 
-   
   return (
-    <div className='bg-[#1c1c1c] p-5 rounded mt-5'>
-        <div className='bg-red-400 mb-2 py-2 px-4 flex justify-between rounded'>
-            <h2 className='text-lg font-medium w-1/5'>Employee Name</h2>
-            <h3 className='text-lg font-medium w-1/5'>New Task</h3>
-            <h5 className='text-lg font-medium w-1/5'>Active Task</h5>
-            <h5 className='text-lg font-medium w-1/5'>Completed</h5>
-            <h5 className='text-lg font-medium w-1/5'>Failed</h5>
-        </div>
-        <div className=''>
-        {userData && userData.map(function(elem,idx){
-            return <div key={idx} className='border-2 border-emerald-500 mb-2 py-2 px-4 flex justify-between rounded'>
-            <h2 className='text-lg font-medium  w-1/5'>{elem.firstName}</h2>
-            <h3 className='text-lg font-medium w-1/5 text-blue-400'>{elem.taskCounts.newTask}</h3>
-            <h5 className='text-lg font-medium w-1/5 text-yellow-400'>{elem.taskCounts.active}</h5>
-            <h5 className='text-lg font-medium w-1/5 text-white'>{elem.taskCounts.completed}</h5>
-            <h5 className='text-lg font-medium w-1/5 text-red-600'>{elem.taskCounts.failed}</h5>
-        </div>
-        })}
-        </div>
-        
-        
+    <div className='overflow-x-auto'>
+      <table className='min-w-full bg-[#1c1c1c] rounded-xl shadow-lg'>
+        <thead>
+          <tr className='bg-gradient-to-r from-orange-500 to-emerald-600 text-white'>
+            <th className='py-3 px-4 rounded-tl-xl text-left'>Employee Name</th>
+            <th className='py-3 px-4 text-left'>New Task</th>
+            <th className='py-3 px-4 text-left'>Active Task</th>
+            <th className='py-3 px-4 text-left'>Completed</th>
+            <th className='py-3 px-4 rounded-tr-xl text-left'>Failed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {userData && userData.map(function(elem,idx){
+            return (
+              <tr key={idx} className='border-b border-emerald-700 hover:bg-[#223838] transition'>
+                <td className='py-3 px-4 text-white font-semibold'>{elem.firstName}</td>
+                <td className='py-3 px-4 text-blue-400 font-bold'>{elem.taskCounts.newTask}</td>
+                <td className='py-3 px-4 text-yellow-400 font-bold'>{elem.taskCounts.active}</td>
+                <td className='py-3 px-4 text-green-400 font-bold'>{elem.taskCounts.completed}</td>
+                <td className='py-3 px-4 text-red-400 font-bold'>{elem.taskCounts.failed}</td>
+              </tr>
+            )
+          })}
+        </tbody>
+      </table>
     </div>
   )
 }

@@ -53,10 +53,20 @@ const EmployeeDashboard = (props) => {
   };
 
   return (
-    <div className='p-10 h-screen' style={{ backgroundColor: '#0d2b2b' }}>
+    <div className='h-screen w-full p-0' style={{ backgroundColor: '#0d2b2b' }}>
+      <div className="w-full py-6 px-10 bg-gradient-to-r from-emerald-600 to-orange-500 shadow-lg flex items-center justify-between rounded-b-3xl">
+        <h1 className="text-3xl font-bold text-white tracking-wide">Welcome, {userData?.firstName || 'Employee'}</h1>
         <Header changeUser={props.changeUser} data={userData}/>
-        <TaskListNumbers data={userData} />
-        <TaskList data={userData} onAccept={handleAcceptTask} onComplete={handleCompleteTask} onFail={handleFailTask} />
+      </div>
+      <div className="p-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-10">
+          <TaskListNumbers data={userData} />
+        </div>
+        <div className="bg-[#162e2e] rounded-2xl shadow-lg p-8">
+          <h2 className="text-xl font-semibold text-white mb-4">Your Tasks</h2>
+          <TaskList data={userData} onAccept={handleAcceptTask} onComplete={handleCompleteTask} onFail={handleFailTask} />
+        </div>
+      </div>
     </div>
   )
 }

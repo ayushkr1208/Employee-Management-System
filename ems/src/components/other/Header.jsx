@@ -1,28 +1,26 @@
-import React, { useState } from 'react'
-import { setLocalStorage } from '../../utils/localStorage'
+import React from 'react'
+import { FiLogOut } from 'react-icons/fi'
 
 const Header = (props) => {
-
-  // const [username, setUsername] = useState('')
-
-  // if(!data){
-  //   setUsername('Admin')
-  // }else{
-  //   setUsername(data.firstName)
-  // }
-
-  const logOutUser = ()=>{
-    localStorage.setItem('loggedInUser','')
+  const logOutUser = () => {
+    localStorage.setItem('loggedInUser', '')
     props.changeUser('')
-    // window.location.reload()
   }
 
   const username = props.data && props.data.firstName ? props.data.firstName : 'Admin';
 
   return (
-    <div className='flex items-end justify-between'>
-        <h1 className='text-2xl font-medium'>Hello <br /> <span className='text-3xl font-semibold'>{username} 👋</span></h1>
-        <button onClick={logOutUser} className='bg-red-600 text-base font-medium text-white px-5 py-2 rounded-sm'>Log Out</button>
+    <div className='flex items-center justify-end gap-4'>
+      {/* Optionally show username here if desired */}
+      <button
+        onClick={logOutUser}
+        className='flex items-center gap-2 bg-gradient-to-r from-red-500 to-orange-500 text-white px-5 py-2 rounded-full shadow-lg font-semibold text-base hover:scale-105 hover:shadow-xl transition group relative'
+        title='Log Out'
+      >
+        <FiLogOut className='text-lg' />
+        <span className='hidden sm:inline'>Log Out</span>
+        <span className='absolute left-1/2 -bottom-8 -translate-x-1/2 bg-black text-white text-xs rounded px-2 py-1 opacity-0 group-hover:opacity-100 pointer-events-none transition'>Log Out</span>
+      </button>
     </div>
   )
 }
