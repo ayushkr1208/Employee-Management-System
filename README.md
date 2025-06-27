@@ -74,3 +74,11 @@ ems/
 
 ## License
 This project is for educational/demo purposes. Feel free to use and modify it for your needs.
+
+## UI
+
+![page1](https://github.com/user-attachments/assets/30bc7079-09eb-42d4-9ed5-9c699ff13b1f)
+![login_page](https://github.com/user-attachments/assets/8d6d8dd6-d98b-40d9-9a44-69e68bfa4030)
+![Admin_Dashboard](https://github.com/user-attachments/assets/9c77a989-72a0-463a-a710-e252f768e576)
+![Employee Dashboard](https://github.com/user-attachments/assets/49df58f7-6a19-4cd2-abcb-9218b7f95ea0)
+
